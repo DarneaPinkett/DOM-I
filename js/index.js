@@ -41,6 +41,7 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+
 let nav = document.querySelectorAll('nav a');
 nav[0].text= siteContent.nav['nav-item-1'];
 nav[1].text= siteContent.nav['nav-item-2'];
@@ -55,18 +56,24 @@ log.innerText = "Log in"
 nav1.append(log)
 log.style.color= "green";
 
+let home = document.createElement('a')
+home.innerText = "Home"
+nav1.prepend(home)
+home.style.color="green";
+
 nav.forEach (element => { element.style.color = "green";})
 
 let cta = document.getElementById("cta-img");
 cta.setAttribute('src', siteContent["cta"]["img-src"]);
 
 let cta1 = document.querySelector('h1');
-cta1.textContent = siteContent.cta.h1;
+siteContent.cta.h1 = "DOM <br> Is <br> Awesome"
+cta1.innerHTML= siteContent['cta']['h1']
 
 let btn = document.querySelector('button');
 btn.textContent = siteContent.cta.button;
 
-const h4 = document.querySelectorAll('h4');
+let h4 = document.querySelectorAll('h4');
 h4[0].textContent = "Features";
 h4[1].textContent = "About";
 h4[2].textContent = "Services";
@@ -74,12 +81,16 @@ h4[3].textContent = "Product";
 h4[4].textContent = "Vision";
 h4[5].textContent = "Contact";
 
+h4.forEach (element => {element.style.color = "red";})
+
 let p = document.querySelectorAll('.text-content p');
 p[0].innerHTML= siteContent['main-content']['features-content']
 p[1].innerHTML= siteContent['main-content']['about-content']
 p[2].innerHTML= siteContent['main-content']['services-content']
 p[3].innerHTML= siteContent['main-content']['product-content']
 p[4].innerHTML= siteContent['main-content']['vision-content']
+
+p.forEach (element => {element.style.fontSize = "larger";})
 
 
 let mid = document.getElementById("middle-img");
